@@ -20,11 +20,13 @@ const animateSnake=function() {
   trackPosition(head);
   if(snakeHitWall(head)){
     clearInterval(animator);
-    document.write("game over");
+    newGame();
   }
+  // console.log(snake)
   if(snakeHitItself(snake)){
     clearInterval(animator);
-    document.write("game over");
+    document.write();
+    newGame();
   }
 }
 
@@ -72,7 +74,10 @@ const snakeHitWall=function(block){
 }
 
 const snakeHitItself = function(snake){
-
+  let sHead = snake.head;
+  let sBody = snake.body;
+  let result=sBody.some(function(other){return sHead.isSameCoordAs(other)});
+  return result;
 }
 
 const startGame=function() {
