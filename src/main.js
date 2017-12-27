@@ -18,10 +18,10 @@ const animateSnake=function() {
     drawFood(food);
   }
   trackPosition(head);
-  // if(snakeHitWall(head)){
-  //   clearInterval(animator);
-  //   document.write("game over");
-  // }
+  if(snakeHitWall(head)){
+    clearInterval(animator);
+    document.write("game over");
+  }
   // if(snakeHitItself(snake)){
   //   clearInterval(animator);
   //   document.write("game over");
@@ -66,10 +66,10 @@ const createFood=function(numberOfRows,numberOfCols) {
 const trackPosition=function(block){
   console.log("current position : ",block);
 }
-//
-// const snakeHitWall=function(block){
-//   return block.x<0||block.y<0||block.x>numberOfCols||block.y>numberOfRows;
-// }
+
+const snakeHitWall=function(block){
+  return block.x<0||block.y<0||block.x>numberOfCols||block.y>numberOfRows;
+}
 //
 // const snakeHitItself = function(snake){
 //
