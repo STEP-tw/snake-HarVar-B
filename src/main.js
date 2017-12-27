@@ -22,10 +22,10 @@ const animateSnake=function() {
     clearInterval(animator);
     document.write("game over");
   }
-  // if(snakeHitItself(snake)){
-  //   clearInterval(animator);
-  //   document.write("game over");
-  // }
+  if(snakeHitItself(snake)){
+    clearInterval(animator);
+    document.write("game over");
+  }
 }
 
 const changeSnakeDirection=function(event) {
@@ -70,10 +70,10 @@ const trackPosition=function(block){
 const snakeHitWall=function(block){
   return block.x<0||block.y<0||block.x>numberOfCols||block.y>numberOfRows;
 }
-//
-// const snakeHitItself = function(snake){
-//
-// }
+
+const snakeHitItself = function(snake){
+
+}
 
 const startGame=function() {
   createSnake();
