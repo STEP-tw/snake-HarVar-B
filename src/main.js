@@ -67,15 +67,8 @@ const snakeHitWall=function(snake){
   return block.x<0||block.y<0||block.x>numberOfCols||block.y>numberOfRows;
 }
 
-const snakeHitItself = function(snake){
-  let sHead = snake.head;
-  let sBody = snake.body;
-  let result=sBody.some(function(other){return sHead.isSameCoordAs(other)});
-  return result;
-}
-
 const gameOver = function(snake){
-  return snakeHitWall(snake)||snakeHitItself(snake);
+  return snakeHitWall(snake)||snake.hitItself();
 }
 
 const newGame=function(){
